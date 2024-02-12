@@ -12,7 +12,7 @@ const products = [
     },
     {
         name: 'Pinot Noir Rosé Wine',
-        image: '/images/pinot_noir_rose.jpg',
+        image: '/images/pmv-chamara.jpg',
         description: 'A delicate and refreshing Pinot Noir Rosé with hints of strawberries and floral notes. Ideal for warm summer days.',
         brand: 'Valpolicella Rosé',
         category: 'Rosé Wine',
