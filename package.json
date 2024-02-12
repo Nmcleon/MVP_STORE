@@ -13,6 +13,7 @@
   "author": "Noah K.",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
     "mongoose": "^8.1.2"
   },
