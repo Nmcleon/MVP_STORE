@@ -15,6 +15,15 @@ const PlaceOrderScreen = () => {
     const dispatch = useDispatch()
     const cart = useSelector((state) => state.cart)
     const [createOrder, { isLoading, error }] = useCreateOrderMutation()
+
+    useEffect(() => {
+        if (!cart.shippingAddress.address) {
+            navigate('/shipping')
+        } else if (!cart.paymentMethod) {
+            navigate('/payment')
+        }
+    }, [cart.paymentMethod, cart.shippingAddress.address, navigate]);
+
     const placeOrderHandler = async () => {
         try {
             const res = await createOrder({
@@ -30,17 +39,9 @@ const PlaceOrderScreen = () => {
             dispatch(clearCartItems())
             navigate(`/order/${res._id}`)
         } catch (err) {
-            toast.error(err)
+            toast.error(err);
         }
     }
-
-    useEffect(() => {
-        if (!cart.shippingAddress.address) {
-            navigate('/shipping')
-        } else if (!cart.paymentMethod) {
-            navigate('/payment')
-        }
-    }, [cart.paymentMethod, cart.shippingAddress.address, navigate])
 
     return (
         <>
