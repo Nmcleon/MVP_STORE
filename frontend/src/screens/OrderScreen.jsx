@@ -11,19 +11,19 @@ import { useGetOrderDetailsQuery, usePayOrderMutation, useGetPayPalClientIdQuery
 
 const OrderScreen = () => {
     const { id: orderId } = useParams()
-    const { 
+    const {
         data: order,
-		refetch,
+        refetch,
         isLoading,
         error
     } = useGetOrderDetailsQuery(orderId)
     // Custom hook for paypal script provider
     const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation()
     const [{ isPending }, paypalDispatch] = usePayPalScriptReducer()
-    const { 
-        data: paypal, 
-        isLoading: loadingPayPal, 
-        error: errorPayPal 
+    const {
+        data: paypal,
+        isLoading: loadingPayPal,
+        error: errorPayPal
     } = useGetPayPalClientIdQuery()
     const { userInfo } = useSelector((state) => state.auth)
 
@@ -121,7 +121,7 @@ const OrderScreen = () => {
                         </ListGroup.Item>
 
                         <ListGroup.Item>
-                        <h3>Payment</h3>
+                            <h3>Payment</h3>
                             <p>
                                 <strong>Method: </strong>{order.paymentMethod}
                             </p>
@@ -200,7 +200,7 @@ const OrderScreen = () => {
                                 </ListGroup.Item>
                             )}
 
-                            { /* MARK AS DELIVERED PLACEHOLDER */ }
+                            { /* MARK AS DELIVERED PLACEHOLDER */}
                         </ListGroup>
                     </Card>
                 </Col>
