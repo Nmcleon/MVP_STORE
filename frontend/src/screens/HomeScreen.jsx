@@ -9,12 +9,12 @@ import { useGetProductsQuery } from '../slices/productsApiSlice';
 
 
 const HomeScreen = () => {
-  const { pageNumber } = useParams()
-  const { data, isLoading, isError } = useGetProductsQuery({ pageNumber })
+  const { pageNumber, keyword } = useParams()
+  const { data, isLoading, isError } = useGetProductsQuery({ pageNumber, keyword })
 
   return (
     <>
-      {isLoading ? (
+      { isLoading ? (
         <Loader />
       ) : isError ? (
         <Message variant='danger'>
@@ -22,7 +22,11 @@ const HomeScreen = () => {
         </Message>
       ) : (
         <>
-          <h3>Latest Products</h3>
+           {keyword ? (
+                            <p>Search results for "{keyword}"</p>
+                        ) : (
+                            <h3>Latest Products</h3>
+                        )}
           <Row>
             {data.products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
@@ -32,7 +36,7 @@ const HomeScreen = () => {
           </Row>
           <Row>
             <Col className='my-2'>
-              <Paginate pages={data.pages} page={data.page} />
+            <Paginate pages={data.pages} page={data.page} keyword={keyword ? keyword : ''} />
             </Col>
           </Row>
         </>
