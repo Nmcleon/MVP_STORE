@@ -5,7 +5,7 @@ import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import Paginate from '../components/Paginate'
-import ProductCarousel from '../components/ProductCarousel'
+//import ProductCarousel from '../components/ProductCarousel'
 import { useGetProductsQuery } from '../slices/productsApiSlice';
 
 
@@ -27,7 +27,9 @@ const HomeScreen = () => {
                             <h5>Search results for "{keyword}"</h5>
                         ) : (
                           <>
-                          <ProductCarousel />
+                          
+                          {/*//uncomment to access carousel
+                          <ProductCarousel />*/}
                           <h3>Latest Products</h3>
                       </>
                         )}

@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { useGetProductDetailsQuery, useCreateProductReviewMutatin } from '../slices/productsApiSlice'
+import { useGetProductDetailsQuery, useCreateProductReviewMutation } from '../slices/productsApiSlice'
 import { addToCart } from '../slices/cartSlice'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -28,7 +28,7 @@ const ProductScreen = () => {
         isLoading,
         error
     } = useGetProductDetailsQuery(productId)
-    const [addProductReview, { isLoading: loadingProductReview }] = useCreateProductReviewMutatin()
+    const [addProductReview, { isLoading: loadingProductReview }] = useCreateProductReviewMutation()
     const { userInfo } = useSelector((state) => state.auth)
     const addToCartHandler = () => {
         dispatch(addToCart({ ...product, qty }))
