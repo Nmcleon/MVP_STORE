@@ -12,6 +12,7 @@ import { useGetProductDetailsQuery, useCreateProductReviewMutatin } from '../sli
 import { addToCart } from '../slices/cartSlice'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Meta from '../components/Meta'
 import { Form } from 'react-bootstrap';
 
 const ProductScreen = () => {
@@ -68,6 +69,7 @@ const ProductScreen = () => {
                     </Message>
                     ) : (
                         <>
+                        <Meta title={product.name} />
                 <Row>
                     <Col md={5}>
                         <Image src={product.image} alt={product.name} fluid />

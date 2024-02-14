@@ -10,6 +10,7 @@ import { useProfileMutation } from '../slices/usersApiSlice'
 import { FaTimes } from 'react-icons/fa'
 import { setCredentials } from '../slices/authSlice'
 import { useGetMyOrdersQuery } from '../slices/ordersApiSlice'
+import Meta from '../components/Meta'
 
 const ProfileScreen = () => {
     const [name, setName] = useState('')
@@ -46,6 +47,7 @@ const ProfileScreen = () => {
     return (
         <Row>
             <Col md={3}>
+                <Meta title= 'User profile' />
                 <h3>User Profile</h3>
 
                 <Form onSubmit={submitHandler}>
