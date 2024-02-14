@@ -14,7 +14,6 @@ import orderRoutes from './routes/orderRoutes.js'
 const port = process.env.PORT;
 connectDB();
 
-const __dirname = path.resolve()
 const app = express();
 
 // Body parser middleware
@@ -33,7 +32,8 @@ app.use('/api/users', userRoutes);
 app.use('/api/orders', orderRoutes)
 
 app.use('/api/upload', uploadRoutes)
-app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
+const __dirname = path.resolve() //set dirname to currend directory
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
 app.get('/api/config/paypal', (req, res) => res.send({ clientId: process.env.PAYPAL_CLIENT_ID }))
 

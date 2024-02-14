@@ -20,6 +20,7 @@ const ProfileScreen = () => {
     const { userInfo } = useSelector((state) => state.auth)
     const submitHandler = async (e) => {
         e.preventDefault()
+        
         if (password !== confirmPassword) {
             toast.error('Password do not match')
         } else {

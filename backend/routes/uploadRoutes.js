@@ -3,6 +3,7 @@ import express from 'express'
 import multer from 'multer'
 
 const router = express.Router()
+//storage location-server. folder: uploaads
 const storage = multer.diskStorage({
     destination(req, file, cb) {
         cb(null, 'uploads/')
@@ -16,7 +17,7 @@ const upload = multer({
 })
 
 function checkFileType(file, cb) {
-    const fileTypes = /jpg|jpeg|png/
+    const fileTypes = /jpg|jpeg|png/ //accerted file types
     const extName = fileTypes.test(path.extname(file.originalname).toLowerCase())
     const mimeType = fileTypes.test(file.mimeType)
 
