@@ -70,6 +70,7 @@ const ProductListScreen = () => {
                                 <th>Price</th>
                                 <th>Category</th>
                                 <th>Brand</th>
+                                <th>Stock</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -77,11 +78,12 @@ const ProductListScreen = () => {
                         <tbody>
                             {data.products.map((product) => (
                                 <tr key={product._id}>
-                                    <td>{product._id}</td>
+                                    <td>{product.name === '[Name]' || product.price === 0 || product.brand === '[Brand]' || product.category === '[Category]' ? '🔴 ' + product._id : product._id}</td>
                                     <td>{product.name}</td>
                                     <td>${product.price}</td>
                                     <td>{product.category}</td>
                                     <td>{product.brand}</td>
+                                    <td>{product.countInStock}</td>
                                     <td>
                                         <LinkContainer to={`/admin/product/${product._id}/edit`}>
                                             <Button variant='light' className=' btn-sm mx-2' title='Edit'>
