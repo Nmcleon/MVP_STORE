@@ -80,7 +80,7 @@ const ProductListScreen = () => {
                                 <tr key={product._id}>
                                     <td>{product.name === '[Name]' || product.price === 0 || product.brand === '[Brand]' || product.category === '[Category]' ? '🔴 ' + product._id : product._id}</td>
                                     <td>{product.name}</td>
-                                    <td>${product.price}</td>
+                                    <td>Ksh.{product.price}</td>
                                     <td>{product.category}</td>
                                     <td>{product.brand}</td>
                                     <td>{product.countInStock}</td>
