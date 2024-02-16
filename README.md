@@ -7,7 +7,7 @@ From exquisite wines to robust whiskies, we offer a curated collection to elevat
 
 ## Badges
 
-[![Build Status](https://img.shields.io/travis/your-nmcleon/lore-store/master.svg?style=flat-square)](https://travis-ci.org/your-nmcleon/lore-store)
+[![Build Status](https://img.shields.io/travis/nmcleon/MVP_STORE/master.svg?style=flat-square)](https://travis-ci.org/your-nmcleon/lore-store)
 
 ## Visuals
 
@@ -20,7 +20,7 @@ To install Lore Store, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-nmcleon/lore-store.git
+git clone https://github.com/nmcleon/MVP_STORE.git
 cd lore-store
 ```
 
