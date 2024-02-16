@@ -11,7 +11,7 @@ From exquisite wines to robust whiskies, we offer a curated collection to elevat
 
 ## Visuals
 
-![Lore Store](path/to/screenshot.png)
+![Lore Store](screenshots/sign_in.png)
 
 ## Installation
 
